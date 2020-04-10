@@ -1,23 +1,23 @@
 Feature('testovani');
 
 
-Scenario('test run', async (I) => {
-    const assert = require('assert');
-    I.amOnPage('https://google.cz')
-    I.waitForElement({xpath: "//input[@name='q']"});
-    I.seeElement({xpath: "//input[@name='q']"});
-    I.click({xpath: "//input[@name='q']"});
-    I.fillField({xpath: "//input[@name='q']"}, "iliteratura");
-    I.click({xpath: "(//div[@class='sbtc'])[1]"});
-    I.click({xpath: "//a[./text()='Recenze']"});
-    I.waitForElement({xpath: "//div/span[./text()='Robb, Alice: Proč sníme?']"})
-    I.click({xpath: "//div/span[./text()='Robb, Alice: Proč sníme?']"});
-    let title = await I.grabTitle(); 
-    console.log(`Current title is ${title}`);
-    assert.equal(title, 'Robb, Alice: Proč sníme? - iLiteratura.cz');
-    I.seeInTitle('Proč sníme')
+// Scenario('test run', async (I) => {
+//     const assert = require('assert');
+//     I.amOnPage('https://google.cz')
+//     I.waitForElement({xpath: "//input[@name='q']"});
+//     I.seeElement({xpath: "//input[@name='q']"});
+//     I.click({xpath: "//input[@name='q']"});
+//     I.fillField({xpath: "//input[@name='q']"}, "iliteratura");
+//     I.click({xpath: "(//div[@class='sbtc'])[1]"});
+//     I.click({xpath: "//a[./text()='Recenze']"});
+//     I.waitForElement({xpath: "//div/span[./text()='Robb, Alice: Proč sníme?']"})
+//     I.click({xpath: "//div/span[./text()='Robb, Alice: Proč sníme?']"});
+//     let title = await I.grabTitle(); 
+//     console.log(`Current title is ${title}`);
+//     assert.equal(title, 'Robb, Alice: Proč sníme? - iLiteratura.cz');
+//     I.seeInTitle('Proč sníme')
 
-})
+// })
 
 // Scenario('test run dva', async (I) => {
 //     const assert = require('assert');
