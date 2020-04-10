@@ -1,7 +1,7 @@
 Feature('testovani');
 
 
-Scenario('test run', async (I) => {
+Scenario('iliteratura - google', async (I) => {
     const assert = require('assert');
     I.amOnPage('https://google.cz')
     I.waitForElement({xpath: "//input[@name='q']"});
@@ -19,7 +19,7 @@ Scenario('test run', async (I) => {
 
 })
 
-Scenario('test run dva', async (I) => {
+Scenario('iliteratura - seznam', async (I) => {
     const assert = require('assert');
     I.amOnPage('https://seznam.cz')
     I.seeInTitle('Seznam');
@@ -35,7 +35,7 @@ Scenario('test run dva', async (I) => {
 })
 
 
-Scenario('another test', async(I) => {
+Scenario('dnes - hover', async(I) => {
     var assert = require('assert');
     I.amOnPage('https://www.idnes.cz/')
     I.moveCursorTo({xpath: "//a[@score-id='kraje']"})
@@ -49,7 +49,7 @@ Scenario('another test', async(I) => {
 })
 
 
-Scenario('m klub', async(I) => {
+Scenario('m klub - hover', async(I) => {
     var assert = require('assert')
     I.amOnPage('https://google.com')
     I.waitForElement({xpath: "//input[@name='q']"});
