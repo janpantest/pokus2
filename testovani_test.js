@@ -47,7 +47,7 @@ Scenario('another test', async(I) => {
 })
 
 
-Scenario('xxx', async(I) => {
+Scenario('m klub', async(I) => {
     var assert = require('assert')
     I.amOnPage('https://google.com')
     I.waitForElement({xpath: "//input[@name='q']"});
