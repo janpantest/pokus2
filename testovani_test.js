@@ -29,7 +29,7 @@ Scenario('SEZNAM - iliteratura', async (I) => {
     I.waitForElement({xpath: "//a[./text()='Seznam']"})
     I.waitForClickable({xpath: "//span[./text()='Recenze']"})
     I.click({xpath: "//span[./text()='Recenze']"})
-    I.waitForClickable({xpath: "//span[./text()='Robb, Alice: Proč sníme?']"})
+    I.waitForElement({xpath: "//span[./text()='Robb, Alice: Proč sníme?']"})
     I.click({xpath: "//span[./text()='Robb, Alice: Proč sníme?']"})
     I.seeInTitle('Robb')
 })
