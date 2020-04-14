@@ -79,4 +79,14 @@ Scenario('KZvalmez - hover', async(I) => {
 
 })
 
+Scenario('String Assert', async(I) => {
+    var assert = require('assert')
+    I.amOnPage('https://seznam.cz')
+    let svatek = await I.grabTextFrom({xpath: '//span[@class="style-tags style-tags--gadget-title"]'})
+    svatek = svatek.split(' ')
+    svatek = svatek[1]
+    console.log(`hledany string je ${svatek}`)
+    assert.equal(svatek, 'má')
+})
+
 
