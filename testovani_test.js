@@ -24,11 +24,14 @@ Scenario('SEZNAM - iliteratura', async (I) => {
     I.amOnPage('https://seznam.cz')
     I.seeInTitle('Seznam');
     I.waitForElement({xpath: "(//input[@name='q'])[3]"});
-    I.fillField({xpath: "(//input[@name='q'])[3]"}, 'iliteratura');
+    // I.fillField({xpath: "(//input[@name='q'])[3]"}, 'iliteratura');
+    I.fillField({xpath: "(//input[@name='q'])[3]"}, 'iliteratura recenze');
     I.click({xpath: "//button[@class='search-form__button button button--submit button--with-input']"})
     I.waitForElement({xpath: "//a[./text()='Seznam']"})
-    I.waitForClickable({xpath: "//span[./text()='Recenze']"})
-    I.click({xpath: "//span[./text()='Recenze']"})
+    // I.waitForClickable({xpath: "//span[./text()='Recenze']"})
+    // I.click({xpath: "//span[./text()='Recenze']"})
+    I.waitForElement({xpath: "(//a[@class='Result-title-link'])[1]"})
+    I.click({xpath: "(//a[@class='Result-title-link'])[1]"})
     I.waitForElement({xpath: "//span[./text()='Robb, Alice: Proč sníme?']"})
     I.click({xpath: "//span[./text()='Robb, Alice: Proč sníme?']"})
     I.seeInTitle('Robb')
@@ -83,6 +86,7 @@ Scenario('String Assert', async(I) => {
     var assert = require('assert')
     I.amOnPage('https://seznam.cz')
     let svatek = await I.grabTextFrom({xpath: '//span[@class="style-tags style-tags--gadget-title"]'})
+    console.log(`tohle je cely string ${svatek}`)
     svatek = svatek.split(' ')
     svatek = svatek[1]
     console.log(`hledany string je ${svatek}`)
